@@ -58,7 +58,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            &quot;Every Film Has a Secret—We Uncover It.&quot;
+            &quot;Stay Ahead of the Plot Twist your movie Experience&quot;
           </p>
 
           <a href="#about">
