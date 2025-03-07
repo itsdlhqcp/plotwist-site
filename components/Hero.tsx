@@ -53,12 +53,13 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Where every thoughts finds a home and every reviews tells a story"
+            words="Stay Ahead of the Plot Twist your movie Experience"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            &quot;Stay Ahead of the Plot Twist your movie Experience&quot;
+            &quot;Where every thoughts finds a home and every reviews tells a
+            story&quot;
           </p>
 
           <a href="#about">
