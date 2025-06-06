@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "PloTwist",
+      "package_name": "com.mediatalk.plotwist",
+      "sha256_cert_fingerprints": [
+        "1B:90:2E:61:0D:2C:15:20:66:3A:18:D5:86:04:B1:E5:BE:51:43:8B:D1:83:3E:C4:5D:2E:C3:26:23:2C:D4:4E",
+        "5F:6D:18:ED:6C:5E:66:AB:21:D6:FD:1E:28:95:6C:2D:21:2E:12:F7:D5:84:94:BB:C8:72:4B:A5:76:F8:ED:5E"
+      ]
+    }
+  }
+]
