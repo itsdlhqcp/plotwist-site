@@ -2,7 +2,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "PloTwist",
+      "namespace": "android_app",
       "package_name": "com.mediatalk.plotwist",
       "sha256_cert_fingerprints": [
         "1B:90:2E:61:0D:2C:15:20:66:3A:18:D5:86:04:B1:E5:BE:51:43:8B:D1:83:3E:C4:5D:2E:C3:26:23:2C:D4:4E",
