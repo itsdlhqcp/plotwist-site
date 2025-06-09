@@ -669,3 +669,7 @@ Enjoyed creating this project? Dive deeper into our PRO courses for a richer lea
 <a href="https://www.jsmastery.pro/ultimate-next-course" target="_blank">
 <img src="https://i.ibb.co/804sPK6/Image-720.png" alt="Project Banner">
 </a>
+
+## <a name="more">🚀 deeplingking end-point</a>
+![Screenshot 2025-06-07 012104](https://github.com/user-attachments/assets/e72c45b9-6d00-43c3-ab29-1f507232f2ac)
+
