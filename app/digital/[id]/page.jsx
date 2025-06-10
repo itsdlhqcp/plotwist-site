@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `https://plotwist-site.vercel.app/digital/${data.id}`,
+      url: `https://plotwist-site.vercel.app/review/${data.id}`,
       type: 'article',
       siteName: 'PlotTwist',
       images: [
@@ -47,25 +47,7 @@ export default async function SharePage({ params }) {
           alt={data.title}
           className="w-full max-w-lg h-auto rounded-lg mb-5"
         />
-        <div className="flex items-center gap-3 mb-2">
-          <h1 className="text-2xl font-bold">{data.title}</h1>
-          <div className="flex items-center gap-1 text-gray-600">
-            <svg 
-              width="16" 
-              height="16" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-            <span className="text-sm">{data.view_count}</span>
-          </div>
-        </div>
+        <h1 className="text-2xl font-bold mb-2">{data.title}</h1>
         <p className="text-base text-gray-700">{data.description}</p>
 
         <ShareActions title={data.title} description={data.description} />
