@@ -1,3 +1,4 @@
+
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
@@ -11,7 +12,7 @@ export async function GET(request, { params }) {
   try {
     // Fetch shared content
     const { data, error } = await supabase
-      .from('shared_content')
+      .from('shared_digital')
       .select('*')
       .eq('id', id)
       .single();
@@ -24,7 +25,7 @@ export async function GET(request, { params }) {
 
     // Increment view count
     await supabase
-      .from('shared_content')
+      .from('shared_digital')
       .update({ view_count: data.view_count + 1 })
       .eq('id', id);
 

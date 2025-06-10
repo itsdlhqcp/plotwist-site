@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `https://plotwist-site.vercel.app/share/${data.id}`,
+      url: `https://plotwist-site.vercel.app/theatre/${data.id}`,
       type: 'article',
       siteName: 'PlotTwist',
       images: [
