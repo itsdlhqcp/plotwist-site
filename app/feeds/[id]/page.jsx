@@ -98,7 +98,7 @@ export default async function SharePage({ params }) {
               </div>
             )}
             
-            <div className="border-t border-gray-100 pt-4">
+            {/* <div className="border-t border-gray-100 pt-4">
               <div className="flex items-center justify-between text-sm text-gray-500">
                 <span className="flex items-center">
                   <svg className="w-4 h-4 mr-2 text-red-400" fill="currentColor" viewBox="0 0 20 20">
@@ -119,7 +119,7 @@ export default async function SharePage({ params }) {
                   </span>
                 )}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         
