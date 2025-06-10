@@ -3,9 +3,9 @@ import ShareActions from './ShareActions';
 export async function generateMetadata({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/share/${params.id}`);
   if (!res.ok) return { title: 'Content not found' };
-
+  
   const data = await res.json();
-
+  
   return {
     title: data.title,
     description: data.description,
@@ -36,51 +36,34 @@ export async function generateMetadata({ params }) {
 export default async function SharePage({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/share/${params.id}`);
   if (!res.ok) return <div>Content not found</div>;
-
+  
   const data = await res.json();
-
+  
   return (
-    <div className="max-w-xl mx-auto p-5 font-sans">
-      <div className="share-content">
-        <img
-          src={data.image_url}
-          alt={data.title}
-          className="w-full max-w-lg h-auto rounded-lg mb-5"
-        />
-        <h1 className="text-2xl font-bold mb-2">{data.title}</h1>
-        <p className="text-base text-gray-700">{data.description}</p>
-
-        <ShareActions title={data.title} description={data.description} />
+    <div>
+      <div>
+        <div className="flex items-center gap-3 mb-2">
+          <h1>{data.title}</h1>
+          <div className="flex items-center gap-1 text-gray-600">
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <span className="text-sm">{data.view_count}</span>
+          </div>
+        </div>
+        <p>{data.description}</p>
       </div>
+      <ShareActions />
     </div>
   );
 }
-
-
-
-
-// import ShareActions from './ShareActions';
-
-// export default async function SharePage({ params }) {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/share/${params.id}`);
-//   if (!res.ok) return <div>Content not found</div>;
-
-//   const data = await res.json();
-
-//   return (
-//     <div className="max-w-xl mx-auto p-5 font-sans">
-//       <div className="share-content">
-//         <img
-//           src={data.image_url}
-//           alt={data.title}
-//           className="w-full max-w-lg h-auto rounded-lg mb-5"
-//         />
-//         <h1 className="text-2xl font-bold mb-2">{data.title}</h1>
-//         <p className="text-base text-gray-700">{data.description}</p>
-
-//         {/* Interactive buttons handled by client-only component */}
-//         <ShareActions title={data.title} description={data.description} />
-//       </div>
-//     </div>
-//   );
-// }
