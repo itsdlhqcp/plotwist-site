@@ -83,7 +83,7 @@ export default async function SharePage({ params }) {
             />
             
             {parsedTags.length > 0 && (
-              <div className="mb-6">
+              <div className="mb-6 ">
                 <h3 className="text-sm font-semibold text-gray-600 mb-3">Tags:</h3>
                 <div className="flex flex-wrap gap-2">
                   {parsedTags.map((tag, index) => (
