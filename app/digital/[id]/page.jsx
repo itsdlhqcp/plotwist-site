@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import ShareActions from '../../theatre/[id]/ShareActions';
 
 export async function generateMetadata({ params }) {
@@ -33,11 +36,28 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function SharePage({ params }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/review/${params.id}`);
-  if (!res.ok) return <div>Content not found</div>;
+export default function SharePage({ params }) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(false);
 
-  const data = await res.json();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/review/${params.id}`);
+        if (!res.ok) throw new Error('Not found');
+        const json = await res.json();
+        setData(json);
+      } catch (err) {
+        console.error(err);
+        setError(true);
+      }
+    };
+
+    fetchData();
+  }, [params.id]);
+
+  if (error) return <div className="text-red-500 text-center mt-10">Content not found</div>;
+  if (!data) return <div className="text-gray-500 text-center mt-10">Loading...</div>;
 
   return (
     <div className="max-w-xl mx-auto p-5 font-sans">
@@ -50,7 +70,12 @@ export default async function SharePage({ params }) {
         <h1 className="text-2xl font-bold mb-2">{data.title}</h1>
         <p className="text-base text-gray-700">{data.description}</p>
 
-        <ShareActions title={data.title} description={data.description} />
+        {/* ✅ Reuse Open in App + Share button */}
+        <ShareActions
+          title={data.title}
+          description={data.description}
+          appPath={`upcoming`} // deep link path inside the app
+        />
       </div>
     </div>
   );
