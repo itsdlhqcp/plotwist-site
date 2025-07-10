@@ -143,8 +143,6 @@
 
 
 
-
-// SharePage.jsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -154,7 +152,6 @@ export default function SharePage({ params }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
 
-  // ✅ Fetch content client-side (to avoid SSR issues)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -171,29 +168,12 @@ export default function SharePage({ params }) {
     fetchData();
   }, [params.id]);
 
-  // ✅ Open deep link or fallback to Play Store
-  const openInApp = () => {
-    const appLink = `plotwist://theatre/${params.id}`;
-    const playStoreLink = 'https://play.google.com/store/apps/details?id=com.mediatalk.plotwist';
-
-    const timeout = setTimeout(() => {
-      window.location.href = playStoreLink;
-    }, 1500);
-
-    window.location.href = appLink;
-
-    // Cancel timeout if app opens
-    window.addEventListener('blur', () => clearTimeout(timeout));
-  };
-
-  // ✅ Safe MetaMask check
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (typeof window.ethereum === 'undefined') {
         console.warn('MetaMask extension not found');
       } else {
         console.log('MetaMask is installed');
-        // You can now interact with MetaMask safely
       }
     }
   }, []);
@@ -212,16 +192,12 @@ export default function SharePage({ params }) {
         <h1 className="text-2xl font-bold mb-2">{data.title}</h1>
         <p className="text-base text-gray-700">{data.description}</p>
 
-        {/* Open in App Button */}
-        <button
-          onClick={openInApp}
-          className="mt-4 px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
-        >
-          Open in App
-        </button>
-
-        {/* Share buttons */}
-        <ShareActions title={data.title} description={data.description} />
+        {/* Reusable Share & Open in App Actions */}
+        <ShareActions
+          title={data.title}
+          description={data.description}
+          appPath={`upcoming`} // 🔁 dynamic deep link path
+        />
       </div>
     </div>
   );
