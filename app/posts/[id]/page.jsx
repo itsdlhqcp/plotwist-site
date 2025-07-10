@@ -139,7 +139,7 @@ export default async function PostPage({ params }) {
             <ShareActions
                   title={data.title}
                   description={data.description}
-                  appPath={`upcoming`} // 🔁 dynamic deep link path
+                  appPath={`feeds`} // 🔁 dynamic deep link path
                 />
         </div>
       </div>
