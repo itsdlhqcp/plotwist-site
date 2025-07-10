@@ -51,7 +51,7 @@ export default function SharePage({ params }) {
         <ShareActions
           title={data.title}
           description={data.description}
-          appPath={`upcoming`} // 🔁 dynamic deep link path
+          appPath={`releaseInfo/${data.id}`} // 🔁 dynamic deep link path
         />
       </div>
     </div>
