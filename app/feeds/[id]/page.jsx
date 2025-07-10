@@ -133,7 +133,7 @@ export default async function SharePage({ params }) {
         <ShareActions
                   title={data.title}
                   description={data.description}
-                  appPath={``} // 🔁 dynamic deep link path
+                  appPath={`upcoming`} // 🔁 dynamic deep link path
                 />
       </div>
     </div>
