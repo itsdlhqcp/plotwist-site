@@ -1,5 +1,3 @@
-import ShareActions from "@/components/ShareAction";
-
 export async function generateMetadata({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts/${params.id}`);
   if (!res.ok) return { title: 'Content not found' };
@@ -135,12 +133,6 @@ export default async function PostPage({ params }) {
             </p>
             <p className="text-indigo-200 text-sm">Your source for entertainment news and updates</p>
           </div>
-
-            <ShareActions
-                  title={data.title}
-                  description={data.description}
-                  appPath={`feeds`} // 🔁 dynamic deep link path
-                />
         </div>
       </div>
     </div>
