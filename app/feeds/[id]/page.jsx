@@ -1,3 +1,5 @@
+import ShareActions from "../../theatre/[id]/ShareActions";
+
 export async function generateMetadata({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/feeds/${params.id}`);
   if (!res.ok) return { title: 'Content not found' };
@@ -127,6 +129,12 @@ export default async function SharePage({ params }) {
         <div className="text-center mt-8 bg-gray-800 rounded-lg py-4 px-6">
           <p className="text-sm text-white">Powered by <span className="font-semibold bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent">PlotTwist</span></p>
         </div>
+
+        <ShareActions
+                  title={data.title}
+                  description={data.description}
+                  appPath={`feeds`} // 🔁 dynamic deep link path
+                />
       </div>
     </div>
   );
