@@ -1,5 +1,4 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -34,7 +33,6 @@ const Hero = () => {
       >
         {/* Radial gradient for the container to give a faded look */}
         <div
-          // chnage the bg to bg-black-100, so it matches the bg color and will blend in
           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
          bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
         />
@@ -47,22 +45,21 @@ const Hero = () => {
             ratings.
           </p>
 
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
           <TextGenerateEffect
             words="Stay Ahead of the Plot Twist your movie Experience"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            &quot;Where every thoughts finds a home and every reviews tells a
+            &quot;Where every thought finds a home and every review tells a
             story&quot;
           </p>
 
-          <a href="#about">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.mediatalk.plotwist"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <MagicButton
               title="Download The App"
               icon={<FaLocationArrow />}
