@@ -6,10 +6,10 @@ import { InfiniteMovingCards } from "./ui/InfiniteCards";
 const Clients = () => {
   return (
     <section id="testimonials" className="py-20">
-      <h1 className="heading">
+      {/* <h1 className="heading">
         Rave Comments from
         <span className="text-purple"> Our Audience</span>
-      </h1>
+      </h1> */}
 
       <div className="flex flex-col items-center max-lg:mt-10">
         <div
